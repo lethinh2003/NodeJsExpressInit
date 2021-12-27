@@ -1,7 +1,9 @@
-h1 {
-  color: red;
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 2px solid;
 }
-img {
-  max-width: 100px;
-  height: 100px;
+a {
+  display: inline-block;
 }

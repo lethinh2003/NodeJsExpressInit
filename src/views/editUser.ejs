@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Edit User</title>
+  </head>
+
+  <body>
+    <div class="form-input">
+      <form action="/update_new_user" method="POST">
+        <label for="fname">First name:</label><br />
+        <input
+          type="text"
+          id="fname"
+          name="firstName"
+          value="<%= data.firstName%>"
+        /><br />
+        <label for="lname">Last name:</label><br />
+        <input
+          type="text"
+          id="lname"
+          name="lastName"
+          value="<%=  data.lastName%>"
+        /><br />
+        <label for="email">Email:</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value="<%= data.email%>"
+        /><br />
+        <label for="address">Address:</label><br />
+        <input
+          type="text"
+          id="address"
+          name="address"
+          value="<%= data.address%>"
+        /><br />
+        <input type="text" name="id" value="<%= data.id%>" hidden />
+        <button type="submit">Edit</button>
+      </form>
+    </div>
+  </body>
+</html>

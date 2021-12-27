@@ -4,11 +4,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>Document</title>
+    <title>Index</title>
   </head>
 
   <body>
-    <h1 class="hello">hello world from ejs</h1>
-    <h6><%= data %></h6>
+    <% for(let i=0; i<data.length; i++) { %>
+
+    <div class="box">
+      <span>Name: <%= data[i].firstName + data[i].lastName %></span>
+      <span>Mail: <%= data[i].email %></span>
+      <span>Address: <%= data[i].address %></span>
+      <a href="/detail/user/<%=data[i].id %>">Detail</a>
+      <a href="/edit_user/<%=data[i].id %>">Edit</a>
+      <a href="/delete_user/<%=data[i].id %>">Delete</a>
+    </div>
+    <% } %>
+    <div class="form-input">
+      <form action="/create_new_user" method="POST">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="firstName" ><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lastName"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" ><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+        <button type="submit">Create</button>
+        
+      </form>
+    </div>
   </body>
 </html>
